@@ -15,7 +15,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.0.0" />
-    <PackageReference Include="omopcdmlib" Version="1.0.0" />
+    <PackageReference Include="omopcdmlib" Version="1.1.0" />
   </ItemGroup>
 
 </Project>

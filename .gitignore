@@ -5,6 +5,7 @@
 
 # DB
 app/app.db
+.vscode
 
 # User-specific files
 *.rsuser

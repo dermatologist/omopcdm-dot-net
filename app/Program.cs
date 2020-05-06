@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Text;
 using omopcdmlib.Models;
 
 namespace app
@@ -10,11 +12,22 @@ namespace app
         {
 
 
-            using (var db = new appContext())
+        var optionsBuilder = new DbContextOptionsBuilder<OmopCdmContext>();
+        optionsBuilder.UseSqlite("Data Source=app.db");
+
+            using (var db = new OmopCdmContext(optionsBuilder.Options))
             {
                 // Create
                 Console.WriteLine("Inserting a new Concept");
-                db.Add(new Concept { ConceptName = "My Concept" });
+                db.Add(new Concept { ConceptName = "My Concept", 
+                                    ConceptId = 1, 
+                                    VocabularyId = "SNOMED",
+                                    ConceptClassId = "MyClass",
+                                    ConceptCode = "MyCode",
+                                    ValidStartDate = Encoding.ASCII.GetBytes("2012-12-12"),
+                                    ValidEndDate = Encoding.ASCII.GetBytes("2012-12-12"),
+                                    InvalidReason = "None",
+                                    DomainId = "ASDF" });
                 db.SaveChanges();
 
                 // Read

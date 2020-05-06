@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using omopcdmlib.Models;
 
-namespace app
+namespace omopcdmlib.Models
 {
-    public partial class appContext : DbContext
+    public partial class OmopCdmContext : DbContext
     {
-        public appContext()
+        public OmopCdmContext()
         {
         }
 
-        public appContext(DbContextOptions<appContext> options)
+        public OmopCdmContext(DbContextOptions<OmopCdmContext> options)
             : base(options)
         {
         }
@@ -61,6 +60,7 @@ namespace app
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlite("DataSource=app.db");
             }
         }
