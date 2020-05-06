@@ -1,3 +1,5 @@
+REF: https://softchris.github.io/pages/dotnet-nuget.html#resources
+
 mkdir omopcdm-dot-net
 cd omopcdm-dot-net/
 
@@ -27,3 +29,16 @@ dotnet sln add app/app.csproj
 dotnet add app package omopcdmlib
 
 dotnet build app
+
+
+---
+Entity to App
+
+----
+
+cd app
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 3.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 3.0.0
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
