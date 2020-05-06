@@ -1,5 +1,6 @@
 ﻿using System;
-using omopcdmlib;
+using System.Linq;
+using omopcdmlib.Models;
 
 namespace app
 {
@@ -7,9 +8,37 @@ namespace app
     {
         static void Main(string[] args)
         {
-            var start = new Start();
-        
-            Console.WriteLine(string.Format("Hello World! {0}", start.Add(2, 2)));
+
+
+            using (var db = new appContext())
+            {
+                // Create
+                Console.WriteLine("Inserting a new Concept");
+                db.Add(new Concept { ConceptName = "My Concept" });
+                db.SaveChanges();
+
+                // Read
+                Console.WriteLine("Querying for a concept");
+                var concept = db.Concept
+                    .OrderBy(b => b.ConceptName)
+                    .First();
+
+                // Update
+                Console.WriteLine("Updating the concept");
+                concept.ConceptName = "new Concept";
+                // concept.Posts.Add(
+                //     new Post
+                //     {
+                //         Title = "Hello World",
+                //         Content = "I wrote an app using EF Core!"
+                //     });
+                db.SaveChanges();
+
+                // Delete
+                Console.WriteLine("Delete the concept");
+                db.Remove(concept);
+                db.SaveChanges();
+            }
         }
     }
 }
