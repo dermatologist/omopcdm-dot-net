@@ -7,8 +7,8 @@ using app;
 
 namespace app.Migrations
 {
-    [DbContext(typeof(appContext))]
-    partial class appContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(AppContext))]
+    partial class AppContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

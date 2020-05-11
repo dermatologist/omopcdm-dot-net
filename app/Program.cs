@@ -15,7 +15,8 @@ namespace app
         var optionsBuilder = new DbContextOptionsBuilder<OmopCdmContext>();
         optionsBuilder.UseSqlite("Data Source=app.db");
 
-            using (var db = new OmopCdmContext(optionsBuilder.Options))
+            // AppContext from models
+            using (var db = new AppContext(optionsBuilder.Options))
             {
                 // Create
                 Console.WriteLine("Inserting a new Concept");
