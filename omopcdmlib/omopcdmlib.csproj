@@ -14,8 +14,10 @@
   
   <PropertyGroup>
     <PackageId>omopcdmlib</PackageId>
-    <Version>1.1.0</Version>
-    <Authors>beapen</Authors>
-    <Company>Canehealth</Company>
+    <Version>0.1.5</Version>
+    <Authors>dermatologist</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>Package with OMOP CDM models</PackageDescription>
+    <RepositoryUrl>https://github.com/dermatologist/omopcdm-dot-net</RepositoryUrl>
   </PropertyGroup>
 </Project>
