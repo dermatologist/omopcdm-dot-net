@@ -8,8 +8,8 @@ using app;
 
 namespace app.Migrations
 {
-    [DbContext(typeof(appContext))]
-    [Migration("20200506152620_InitialCreate")]
+    [DbContext(typeof(AppContext))]
+    [Migration("20200511152448_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
