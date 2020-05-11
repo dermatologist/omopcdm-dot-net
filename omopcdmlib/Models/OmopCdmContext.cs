@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace omopcdmlib.Models
 {
-    public partial class appContext : DbContext
+    public partial class OmopCdmContext : DbContext
     {
-        public appContext()
+        public OmopCdmContext()
         {
         }
 
-        public appContext(DbContextOptions<appContext> options)
+        public OmopCdmContext(DbContextOptions<OmopCdmContext> options)
             : base(options)
         {
         }
