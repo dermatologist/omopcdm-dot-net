@@ -56,10 +56,8 @@ namespace app
 
                 // Create vocab
                 
-                var vocab = new CreateVocab();
-                vocab.VocabPath = "/scratch/beapen/cdm5-umls/";
-                vocab.dbContext = db;
-                vocab.create();
+                var vocab = new CreateVocab("/scratch/beapen/cdm5-umls/", db);
+                vocab.Create();
             }
 
         }
