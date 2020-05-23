@@ -26,7 +26,7 @@ namespace omopcdmlib.Utils
             using (var reader = new StreamReader(VocabPath + "CONCEPT.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {    
-                var records = (Concept[]) csv.GetRecords<Concept>();
+                var records = csv.GetRecords<Concept>();
                 List<Concept> concepts = records.ToList();
                 dbContext.BulkInsert(concepts);
             }

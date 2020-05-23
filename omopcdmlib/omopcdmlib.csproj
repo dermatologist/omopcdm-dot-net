@@ -16,7 +16,7 @@
   
   <PropertyGroup>
     <PackageId>omopcdmlib</PackageId>
-    <Version>1.2.0</Version>
+    <Version>1.2.1</Version>
     <Authors>dermatologist</Authors>
     <Company>GitHub</Company>
     <PackageDescription>Package with OMOP CDM models</PackageDescription>
