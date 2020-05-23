@@ -4,6 +4,8 @@ using System.IO;
 using System.Globalization;
 using omopcdmlib.Models;
 using CsvHelper;
+using EFCore.BulkExtensions;
+using System.Linq;
 
 namespace omopcdmlib.Utils
 {
@@ -14,8 +16,6 @@ namespace omopcdmlib.Utils
 
         public OmopCdmContext dbContext {get; set; }
 
-
-        private Concept[] concepts;
          
         public void create(){
 
@@ -26,7 +26,9 @@ namespace omopcdmlib.Utils
             using (var reader = new StreamReader(VocabPath + "CONCEPT.csv"))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {    
-                var records = csv.GetRecords<Concept>();
+                var records = (Concept[]) csv.GetRecords<Concept>();
+                List<Concept> concepts = records.ToList();
+                dbContext.BulkInsert(concepts);
             }
         }
     }
