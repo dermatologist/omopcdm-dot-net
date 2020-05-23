@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using omopcdmlib.Models;
+using omopcdmlib.Utils;
 
 namespace app
 {
@@ -52,7 +53,15 @@ namespace app
                 Console.WriteLine("Delete the concept");
                 db.Remove(concept);
                 db.SaveChanges();
+
+                // Create vocab
+                
+                var vocab = new CreateVocab();
+                vocab.VocabPath = "/scratch/beapen/cdm5-umls/";
+                vocab.dbContext = db;
+                vocab.create();
             }
+
         }
     }
 }
