@@ -6,6 +6,8 @@ using omopcdmlib.Models;
 using CsvHelper;
 using EFCore.BulkExtensions;
 using System.Linq;
+using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
 
 namespace omopcdmlib.Utils
 {
@@ -38,7 +40,30 @@ namespace omopcdmlib.Utils
             using var csv = new CsvReader(reader, config);
             var records = csv.GetRecords<Concept>();
             List<Concept> concepts = records.ToList();
-            CdmContext.BulkInsert(concepts);
+            if (CdmContext.Database.IsSqlite())
+            {
+                using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        var bulkConfig = new BulkConfig() { SqliteConnection = connection, SqliteTransaction = transaction };
+                        CdmContext.BulkInsert(concepts, bulkConfig);
+                        transaction.Commit();
+                    }
+                }
+            }
+            else
+            {
+                CdmContext.BulkInsert(concepts);
+                using (var transaction = CdmContext.Database.BeginTransaction())
+                {
+                    CdmContext.BulkInsert(concepts);
+                    transaction.Commit();
+                }
+                
+            }
         }
+        
     }
 }
