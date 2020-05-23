@@ -22,7 +22,12 @@ namespace omopcdmlib.Utils
             VocabPath = path;
             CdmContext = context;
         }
-         
+
+        private static string TitleCaseConvert(string title)
+        { 
+        return new CultureInfo("en").TextInfo.ToTitleCase(title.ToLower().Replace("_", " ")).Replace(" ", "");
+        }
+
         public void Create(){
 
             // var reader = new StreamReader(VocabPath + "CONCEPT.csv");
@@ -32,14 +37,16 @@ namespace omopcdmlib.Utils
             var config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true,
-                HeaderValidated = null
-                // MissingFieldFound = null,
-                // IgnoreBlankLines = false
+                HeaderValidated = null,
+                //MissingFieldFound = null,
+                //IgnoreBlankLines = false,
+                PrepareHeaderForMatch = (string header, int index) => TitleCaseConvert(header)
             };
             using var reader = new StreamReader(VocabPath + "CONCEPT.csv");
             using var csv = new CsvReader(reader, config);
-            var records = csv.GetRecords<Concept>();
-            List<Concept> concepts = records.ToList();
+            
+            var concepts = csv.GetRecords<Concept>().ToList();
+            //List<Concept> concepts = records.ToList();
             if (CdmContext.Database.IsSqlite())
             {
                 using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())

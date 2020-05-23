@@ -14,11 +14,16 @@ namespace app
 
 
         var optionsBuilder = new DbContextOptionsBuilder<OmopCdmContext>();
-        optionsBuilder.UseSqlite("Data Source=app.db");
+        optionsBuilder.UseSqlite("Data Source=cdm.db");
 
             // AppContext from models
             using (var db = new AppContext(optionsBuilder.Options))
             {
+                // Create vocab
+                Console.WriteLine("Writing vocabulary");
+                var vocab = new CreateVocab("/scratch/beapen/cdm5-umls/", db);
+                vocab.Create();
+
                 // Create
                 Console.WriteLine("Inserting a new Concept");
                 db.Add(new Concept { ConceptName = "My Concept", 
@@ -54,10 +59,7 @@ namespace app
                 db.Remove(concept);
                 db.SaveChanges();
 
-                // Create vocab
-                
-                var vocab = new CreateVocab("/scratch/beapen/cdm5-umls/", db);
-                vocab.Create();
+
             }
 
         }

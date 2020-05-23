@@ -7,6 +7,7 @@
 app/app.db
 .vscode
 *.db
+cdm.*
 
 # User-specific files
 *.rsuser
