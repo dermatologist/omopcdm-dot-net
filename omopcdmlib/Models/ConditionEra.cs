@@ -5,12 +5,12 @@ namespace omopcdmlib.Models
 {
     public partial class ConditionEra
     {
-        public long Id { get; set; }
-        public long ConditionEraId { get; set; }
-        public long PersonId { get; set; }
-        public long ConditionConceptId { get; set; }
+        public int Id { get; set; }
+        public int ConditionEraId { get; set; }
+        public int PersonId { get; set; }
+        public int ConditionConceptId { get; set; }
         public byte[] ConditionEraStartDate { get; set; }
         public byte[] ConditionEraEndDate { get; set; }
-        public long? ConditionOccurrenceCount { get; set; }
+        public int? ConditionOccurrenceCount { get; set; }
     }
 }

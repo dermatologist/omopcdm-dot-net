@@ -5,10 +5,10 @@ namespace omopcdmlib.Models
 {
     public partial class DrugCost
     {
-        public long Id { get; set; }
-        public long DrugCostId { get; set; }
-        public long DrugExposureId { get; set; }
-        public long? CurrencyConceptId { get; set; }
+        public int Id { get; set; }
+        public int DrugCostId { get; set; }
+        public int DrugExposureId { get; set; }
+        public int? CurrencyConceptId { get; set; }
         public byte[] PaidCopay { get; set; }
         public byte[] PaidCoinsurance { get; set; }
         public byte[] PaidTowardDeductible { get; set; }
@@ -19,6 +19,6 @@ namespace omopcdmlib.Models
         public byte[] IngredientCost { get; set; }
         public byte[] DispensingFee { get; set; }
         public byte[] AverageWholesalePrice { get; set; }
-        public long? PayerPlanPeriodId { get; set; }
+        public int? PayerPlanPeriodId { get; set; }
     }
 }

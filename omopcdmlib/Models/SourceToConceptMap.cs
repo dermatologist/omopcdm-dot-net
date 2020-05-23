@@ -5,12 +5,12 @@ namespace omopcdmlib.Models
 {
     public partial class SourceToConceptMap
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string SourceCode { get; set; }
-        public long SourceConceptId { get; set; }
+        public int SourceConceptId { get; set; }
         public string SourceVocabularyId { get; set; }
         public string SourceCodeDescription { get; set; }
-        public long TargetConceptId { get; set; }
+        public int TargetConceptId { get; set; }
         public string TargetVocabularyId { get; set; }
         public byte[] ValidStartDate { get; set; }
         public byte[] ValidEndDate { get; set; }

@@ -5,15 +5,15 @@ namespace omopcdmlib.Models
 {
     public partial class Note
     {
-        public long Id { get; set; }
-        public long NoteId { get; set; }
-        public long PersonId { get; set; }
+        public int Id { get; set; }
+        public int NoteId { get; set; }
+        public int PersonId { get; set; }
         public byte[] NoteDate { get; set; }
         public string NoteTime { get; set; }
-        public long NoteTypeConceptId { get; set; }
+        public int NoteTypeConceptId { get; set; }
         public string NoteText { get; set; }
-        public long? ProviderId { get; set; }
-        public long? VisitOccurrenceId { get; set; }
+        public int? ProviderId { get; set; }
+        public int? VisitOccurrenceId { get; set; }
         public string NoteSourceValue { get; set; }
     }
 }

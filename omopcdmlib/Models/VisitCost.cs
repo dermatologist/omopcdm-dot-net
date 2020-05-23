@@ -5,10 +5,10 @@ namespace omopcdmlib.Models
 {
     public partial class VisitCost
     {
-        public long Id { get; set; }
-        public long VisitCostId { get; set; }
-        public long VisitOccurrenceId { get; set; }
-        public long? CurrencyConceptId { get; set; }
+        public int Id { get; set; }
+        public int VisitCostId { get; set; }
+        public int VisitOccurrenceId { get; set; }
+        public int? CurrencyConceptId { get; set; }
         public byte[] PaidCopay { get; set; }
         public byte[] PaidCoinsurance { get; set; }
         public byte[] PaidTowardDeductible { get; set; }
@@ -16,6 +16,6 @@ namespace omopcdmlib.Models
         public byte[] PaidByCoordinationBenefits { get; set; }
         public byte[] TotalOutOfPocket { get; set; }
         public byte[] TotalPaid { get; set; }
-        public long? PayerPlanPeriodId { get; set; }
+        public int? PayerPlanPeriodId { get; set; }
     }
 }

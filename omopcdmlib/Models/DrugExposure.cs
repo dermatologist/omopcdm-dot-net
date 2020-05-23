@@ -5,26 +5,26 @@ namespace omopcdmlib.Models
 {
     public partial class DrugExposure
     {
-        public long Id { get; set; }
-        public long DrugExposureId { get; set; }
-        public long PersonId { get; set; }
-        public long DrugConceptId { get; set; }
+        public int Id { get; set; }
+        public int DrugExposureId { get; set; }
+        public int PersonId { get; set; }
+        public int DrugConceptId { get; set; }
         public byte[] DrugExposureStartDate { get; set; }
         public byte[] DrugExposureEndDate { get; set; }
-        public long DrugTypeConceptId { get; set; }
+        public int DrugTypeConceptId { get; set; }
         public string StopReason { get; set; }
-        public long? Refills { get; set; }
+        public int? Refills { get; set; }
         public byte[] Quantity { get; set; }
-        public long? DaysSupply { get; set; }
+        public int? DaysSupply { get; set; }
         public string Sig { get; set; }
-        public long? RouteConceptId { get; set; }
+        public int? RouteConceptId { get; set; }
         public byte[] EffectiveDrugDose { get; set; }
-        public long? DoseUnitConceptId { get; set; }
+        public int? DoseUnitConceptId { get; set; }
         public string LotNumber { get; set; }
-        public long? ProviderId { get; set; }
-        public long? VisitOccurrenceId { get; set; }
+        public int? ProviderId { get; set; }
+        public int? VisitOccurrenceId { get; set; }
         public string DrugSourceValue { get; set; }
-        public long? DrugSourceConceptId { get; set; }
+        public int? DrugSourceConceptId { get; set; }
         public string RouteSourceValue { get; set; }
         public string DoseUnitSourceValue { get; set; }
     }

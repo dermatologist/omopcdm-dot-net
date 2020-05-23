@@ -5,18 +5,18 @@ namespace omopcdmlib.Models
 {
     public partial class DeviceExposure
     {
-        public long Id { get; set; }
-        public long DeviceExposureId { get; set; }
-        public long PersonId { get; set; }
-        public long DeviceConceptId { get; set; }
+        public int Id { get; set; }
+        public int DeviceExposureId { get; set; }
+        public int PersonId { get; set; }
+        public int DeviceConceptId { get; set; }
         public byte[] DeviceExposureStartDate { get; set; }
         public byte[] DeviceExposureEndDate { get; set; }
-        public long DeviceTypeConceptId { get; set; }
+        public int DeviceTypeConceptId { get; set; }
         public string UniqueDeviceId { get; set; }
-        public long? Quantity { get; set; }
-        public long? ProviderId { get; set; }
-        public long? VisitOccurrenceId { get; set; }
+        public int? Quantity { get; set; }
+        public int? ProviderId { get; set; }
+        public int? VisitOccurrenceId { get; set; }
         public string DeviceSourceValue { get; set; }
-        public long? DeviceSourceConceptId { get; set; }
+        public int? DeviceSourceConceptId { get; set; }
     }
 }

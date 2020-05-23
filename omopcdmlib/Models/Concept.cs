@@ -5,8 +5,8 @@ namespace omopcdmlib.Models
 {
     public partial class Concept
     {
-        public long Id { get; set; }
-        public long ConceptId { get; set; }
+        public int Id { get; set; }
+        public int ConceptId { get; set; }
         public string ConceptName { get; set; }
         public string DomainId { get; set; }
         public string VocabularyId { get; set; }

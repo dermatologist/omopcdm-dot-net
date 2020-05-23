@@ -5,13 +5,13 @@ namespace omopcdmlib.Models
 {
     public partial class DrugEra
     {
-        public long Id { get; set; }
-        public long DrugEraId { get; set; }
-        public long PersonId { get; set; }
-        public long DrugConceptId { get; set; }
+        public int Id { get; set; }
+        public int DrugEraId { get; set; }
+        public int PersonId { get; set; }
+        public int DrugConceptId { get; set; }
         public byte[] DrugEraStartDate { get; set; }
         public byte[] DrugEraEndDate { get; set; }
-        public long? DrugExposureCount { get; set; }
-        public long? GapDays { get; set; }
+        public int? DrugExposureCount { get; set; }
+        public int? GapDays { get; set; }
     }
 }

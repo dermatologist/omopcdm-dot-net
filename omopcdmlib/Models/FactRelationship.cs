@@ -5,11 +5,11 @@ namespace omopcdmlib.Models
 {
     public partial class FactRelationship
     {
-        public long Id { get; set; }
-        public long DomainConceptId1 { get; set; }
-        public long FactId1 { get; set; }
-        public long DomainConceptId2 { get; set; }
-        public long FactId2 { get; set; }
-        public long RelationshipConceptId { get; set; }
+        public int Id { get; set; }
+        public int DomainConceptId1 { get; set; }
+        public int FactId1 { get; set; }
+        public int DomainConceptId2 { get; set; }
+        public int FactId2 { get; set; }
+        public int RelationshipConceptId { get; set; }
     }
 }

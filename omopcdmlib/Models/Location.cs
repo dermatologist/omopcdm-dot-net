@@ -5,8 +5,8 @@ namespace omopcdmlib.Models
 {
     public partial class Location
     {
-        public long Id { get; set; }
-        public long LocationId { get; set; }
+        public int Id { get; set; }
+        public int LocationId { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string City { get; set; }

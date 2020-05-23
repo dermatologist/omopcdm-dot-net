@@ -5,17 +5,17 @@ namespace omopcdmlib.Models
 {
     public partial class ConditionOccurrence
     {
-        public long Id { get; set; }
-        public long ConditionOccurrenceId { get; set; }
-        public long PersonId { get; set; }
-        public long ConditionConceptId { get; set; }
+        public int Id { get; set; }
+        public int ConditionOccurrenceId { get; set; }
+        public int PersonId { get; set; }
+        public int ConditionConceptId { get; set; }
         public byte[] ConditionStartDate { get; set; }
         public byte[] ConditionEndDate { get; set; }
-        public long ConditionTypeConceptId { get; set; }
+        public int ConditionTypeConceptId { get; set; }
         public string StopReason { get; set; }
-        public long? ProviderId { get; set; }
-        public long? VisitOccurrenceId { get; set; }
+        public int? ProviderId { get; set; }
+        public int? VisitOccurrenceId { get; set; }
         public string ConditionSourceValue { get; set; }
-        public long? ConditionSourceConceptId { get; set; }
+        public int? ConditionSourceConceptId { get; set; }
     }
 }

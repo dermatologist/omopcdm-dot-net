@@ -5,7 +5,7 @@ namespace omopcdmlib.Models
 {
     public partial class CdmSource
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string CdmSourceName { get; set; }
         public string CdmSourceAbbreviation { get; set; }
         public string CdmHolder { get; set; }

@@ -5,22 +5,22 @@ namespace omopcdmlib.Models
 {
     public partial class Observation
     {
-        public long Id { get; set; }
-        public long ObservationId { get; set; }
-        public long PersonId { get; set; }
-        public long ObservationConceptId { get; set; }
+        public int Id { get; set; }
+        public int ObservationId { get; set; }
+        public int PersonId { get; set; }
+        public int ObservationConceptId { get; set; }
         public byte[] ObservationDate { get; set; }
         public string ObservationTime { get; set; }
-        public long ObservationTypeConceptId { get; set; }
+        public int ObservationTypeConceptId { get; set; }
         public byte[] ValueAsNumber { get; set; }
         public string ValueAsString { get; set; }
-        public long? ValueAsConceptId { get; set; }
-        public long? QualifierConceptId { get; set; }
-        public long? UnitConceptId { get; set; }
-        public long? ProviderId { get; set; }
-        public long? VisitOccurrenceId { get; set; }
+        public int? ValueAsConceptId { get; set; }
+        public int? QualifierConceptId { get; set; }
+        public int? UnitConceptId { get; set; }
+        public int? ProviderId { get; set; }
+        public int? VisitOccurrenceId { get; set; }
         public string ObservationSourceValue { get; set; }
-        public long? ObservationSourceConceptId { get; set; }
+        public int? ObservationSourceConceptId { get; set; }
         public string UnitSourceValue { get; set; }
         public string QualifierSourceValue { get; set; }
     }

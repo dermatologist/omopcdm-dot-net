@@ -5,11 +5,11 @@ namespace omopcdmlib.Models
 {
     public partial class AttributeDefinition
     {
-        public long Id { get; set; }
-        public long AttributeDefinitionId { get; set; }
+        public int Id { get; set; }
+        public int AttributeDefinitionId { get; set; }
         public string AttributeName { get; set; }
         public string AttributeDescription { get; set; }
-        public long AttributeTypeConceptId { get; set; }
+        public int AttributeTypeConceptId { get; set; }
         public string AttributeSyntax { get; set; }
     }
 }

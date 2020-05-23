@@ -7,6 +7,6 @@ namespace omopcdmlib.Models
     {
         public string DomainId { get; set; }
         public string DomainName { get; set; }
-        public long DomainConceptId { get; set; }
+        public int DomainConceptId { get; set; }
     }
 }
