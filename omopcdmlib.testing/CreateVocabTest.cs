@@ -14,6 +14,10 @@ namespace omopcdmlib.testing
             var start = new ReadCdmFile<Concept>();
             var actual = start.Read("/scratch/beapen/cdm5-umls/CONCEPT.csv");
             Console.WriteLine(actual.Count);
+            for (int i = 0; i < 10; i++) // Loop through List with for
+            {
+                Console.WriteLine(actual[i].ConceptName);
+            }
             Assert.NotEmpty(actual);
         }
 

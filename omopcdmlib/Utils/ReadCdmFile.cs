@@ -53,8 +53,24 @@ namespace omopcdmlib.Utils
             {  
                 foreach (PropertyInfo pro in temp.GetProperties())  
                 {  
-                    if (pro.Name == TitleCaseConvert(column.ColumnName))  
-                        pro.SetValue(obj, dr[column.ColumnName], null);  
+                    if (pro.Name == TitleCaseConvert(column.ColumnName))
+                        try 
+                        {
+                            pro.SetValue(obj, dr[column.ColumnName], null);
+                        }catch
+                        {
+                            pro.SetValue(obj, Int32.Parse((string)dr[column.ColumnName]), null);
+                        }
+
+                        // if(pro.GetType() == st)  // If the column is tring type
+                        //     pro.SetValue(obj, dr[column.ColumnName], null);
+                        // else // If the column is int type
+                        // {
+                        //     Console.Write(dr[column.ColumnName]);
+                        //     Console.WriteLine(pro.GetType().ToString());
+                        //     break;
+                        // }
+                            //pro.SetValue(obj, int.Parse((string)dr[column.ColumnName]), null);  
                     else if (pro.Name == "Id")
                         pro.SetValue(obj, id, null);
                     else  
