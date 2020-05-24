@@ -38,8 +38,9 @@ namespace omopcdmlib.Utils
             {
                 HasHeaderRecord = true,
                 HeaderValidated = null,
-                //MissingFieldFound = null,
-                //IgnoreBlankLines = false,
+                MissingFieldFound = null,
+                IgnoreBlankLines = false,
+                Delimiter = "\t",
                 PrepareHeaderForMatch = (string header, int index) => TitleCaseConvert(header)
             };
             using var reader = new StreamReader(VocabPath + "CONCEPT.csv");
