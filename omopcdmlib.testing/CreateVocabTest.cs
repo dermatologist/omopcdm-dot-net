@@ -12,7 +12,7 @@ namespace omopcdmlib.testing
         public void TestingReadCsv()
         {
             var start = new ReadCdmFile<Concept>();
-            var actual = start.Read("/scratch/beapen/cdm5-umls/CONCEPT.csv");
+            var actual = start.Read("/scratch/beapen/cdm5-umls/CONCEPT.csv", 20);
             Console.WriteLine(actual.Count);
             for (int i = 0; i < 10; i++) // Loop through List with for
             {

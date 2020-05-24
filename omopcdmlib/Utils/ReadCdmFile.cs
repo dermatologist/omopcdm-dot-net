@@ -12,7 +12,7 @@ namespace omopcdmlib.Utils
     public class ReadCdmFile<T>
     {
 
-        public List<T> Read(string filename)
+        public List<T> Read(string filename, int count = 147483648)
         {
             DataTable datatable = new DataTable();
             StreamReader streamreader = new StreamReader(filename);
@@ -23,11 +23,13 @@ namespace omopcdmlib.Utils
                 datatable.Columns.Add(columnheader); // I've added the column headers here.
             }
 
-            while (streamreader.Peek() > 0)
+            int sample = 0;
+            while (streamreader.Peek() > 0 && sample < count)
             {
                 DataRow datarow = datatable.NewRow();
                 datarow.ItemArray = streamreader.ReadLine().Split(delimiter);
                 datatable.Rows.Add(datarow);
+                sample ++;
             }
 
             return ConvertDataTable(datatable);
@@ -53,24 +55,15 @@ namespace omopcdmlib.Utils
             {  
                 foreach (PropertyInfo pro in temp.GetProperties())  
                 {  
+                    // Convert field names to ClassNames before checking Ex: concept_id to ConceptId
                     if (pro.Name == TitleCaseConvert(column.ColumnName))
-                        try 
+                        try // setting a string value
                         {
                             pro.SetValue(obj, dr[column.ColumnName], null);
-                        }catch
+                        }catch // set as an integer
                         {
                             pro.SetValue(obj, Int32.Parse((string)dr[column.ColumnName]), null);
                         }
-
-                        // if(pro.GetType() == st)  // If the column is tring type
-                        //     pro.SetValue(obj, dr[column.ColumnName], null);
-                        // else // If the column is int type
-                        // {
-                        //     Console.Write(dr[column.ColumnName]);
-                        //     Console.WriteLine(pro.GetType().ToString());
-                        //     break;
-                        // }
-                            //pro.SetValue(obj, int.Parse((string)dr[column.ColumnName]), null);  
                     else if (pro.Name == "Id")
                         pro.SetValue(obj, id, null);
                     else  
