@@ -7,7 +7,7 @@ namespace omopcdmlib.Utils
     public class ReadCdmFile
     {
 
-        public void Read(string filename)
+        public DataTable Read(string filename)
         {
             DataTable datatable = new DataTable();
             StreamReader streamreader = new StreamReader(filename);
@@ -18,11 +18,16 @@ namespace omopcdmlib.Utils
                 datatable.Columns.Add(columnheader); // I've added the column headers here.
             }
 
+            var test =0;
             while (streamreader.Peek() > 0)
             {
+                test++;
                 DataRow datarow = datatable.NewRow();
                 datarow.ItemArray = streamreader.ReadLine().Split(delimiter);
                 datatable.Rows.Add(datarow);
+                if(test>20){
+                    break;
+                }
             }
 
             foreach (DataRow row in datatable.Rows)
@@ -32,9 +37,9 @@ namespace omopcdmlib.Utils
                 foreach (DataColumn column in datatable.Columns)
                 {
                     //check what columns you need
-                    if (column.ColumnName == "Column2" || 
-                        column.ColumnName == "Column12" ||
-                        column.ColumnName == "Column45") 
+                    if (column.ColumnName == "concept_name" || 
+                        column.ColumnName == "concept_id" ||
+                        column.ColumnName == "domain_id") 
                     {
                         Console.Write(column.ColumnName);
                         Console.Write(" ");
@@ -48,6 +53,7 @@ namespace omopcdmlib.Utils
                 }
             }
             Console.ReadLine();
+            return datatable;
         }
     }
 }

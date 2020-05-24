@@ -10,9 +10,9 @@ namespace omopcdmlib.testing
         [Fact]
         public void TestingReadCsv()
         {
-            var start = new OmopReadCsv<Concept>();
+            var start = new ReadCdmFile();
             var actual = start.Read("/scratch/beapen/cdm5-umls/CONCEPT.csv");
-            Assert.NotEmpty(actual);
+            Assert.NotNull(actual);
         }
 
     }
