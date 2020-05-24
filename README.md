@@ -7,7 +7,7 @@ The OHSDI OMOP Common Data Model allows for the systematic analysis of healthcar
 ## Install
 
 ```
-PM> Install-Package omopcdm-dot-net
+PM> Install-Package omopcdmlib
 
 ```
 
