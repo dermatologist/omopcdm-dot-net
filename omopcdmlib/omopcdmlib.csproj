@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EFCore.BulkExtensions" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
@@ -14,10 +15,11 @@
   
   <PropertyGroup>
     <PackageId>omopcdmlib</PackageId>
-    <Version>0.1.5</Version>
+    <Version>1.3.2</Version>
     <Authors>dermatologist</Authors>
     <Company>GitHub</Company>
     <PackageDescription>Package with OMOP CDM models</PackageDescription>
     <RepositoryUrl>https://github.com/dermatologist/omopcdm-dot-net</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 </Project>

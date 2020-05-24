@@ -5,11 +5,11 @@ namespace omopcdmlib.Models
 {
     public partial class ObservationPeriod
     {
-        public long Id { get; set; }
-        public long ObservationPeriodId { get; set; }
-        public long PersonId { get; set; }
-        public byte[] ObservationPeriodStartDate { get; set; }
-        public byte[] ObservationPeriodEndDate { get; set; }
-        public long PeriodTypeConceptId { get; set; }
+        public int Id { get; set; }
+        public int ObservationPeriodId { get; set; }
+        public int PersonId { get; set; }
+        public string ObservationPeriodStartDate { get; set; }
+        public string ObservationPeriodEndDate { get; set; }
+        public int PeriodTypeConceptId { get; set; }
     }
 }

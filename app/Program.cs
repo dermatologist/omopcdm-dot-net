@@ -3,6 +3,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Text;
 using omopcdmlib.Models;
+using omopcdmlib.Utils;
 
 namespace app
 {
@@ -12,21 +13,28 @@ namespace app
         {
 
 
-        var optionsBuilder = new DbContextOptionsBuilder<OmopCdmContext>();
-        optionsBuilder.UseSqlite("Data Source=app.db");
+        var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
+        optionsBuilder.UseSqlite("Data Source=cdm-create.db");
 
             // AppContext from models
             using (var db = new AppContext(optionsBuilder.Options))
             {
+                // Create vocab
+                Console.WriteLine("Writing vocabulary");
+                var vocab = new CreateVocab("/scratch/beapen/cdm5-umls/", db);
+                vocab.Create(20);
+
                 // Create
                 Console.WriteLine("Inserting a new Concept");
-                db.Add(new Concept { ConceptName = "My Concept", 
-                                    ConceptId = 1, 
+                db.Add(new Concept { 
+                                    Id=22,
+                                    ConceptId = 4523432,
+                                    ConceptName = "My Concept", 
                                     VocabularyId = "SNOMED",
                                     ConceptClassId = "MyClass",
                                     ConceptCode = "MyCode",
-                                    ValidStartDate = Encoding.ASCII.GetBytes("2012-12-12"),
-                                    ValidEndDate = Encoding.ASCII.GetBytes("2012-12-12"),
+                                    ValidStartDate = "2012-12-12",
+                                    ValidEndDate = "2012-12-12",
                                     InvalidReason = "None",
                                     DomainId = "ASDF" });
                 db.SaveChanges();
@@ -52,7 +60,10 @@ namespace app
                 Console.WriteLine("Delete the concept");
                 db.Remove(concept);
                 db.SaveChanges();
+
+
             }
+
         }
     }
 }

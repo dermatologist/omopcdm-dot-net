@@ -5,11 +5,11 @@ namespace omopcdmlib.Models
 {
     public partial class CareSite
     {
-        public long Id { get; set; }
-        public long CareSiteId { get; set; }
+        public int Id { get; set; }
+        public int CareSiteId { get; set; }
         public string CareSiteName { get; set; }
-        public long? PlaceOfServiceConceptId { get; set; }
-        public long? LocationId { get; set; }
+        public int? PlaceOfServiceConceptId { get; set; }
+        public int? LocationId { get; set; }
         public string CareSiteSourceValue { get; set; }
         public string PlaceOfServiceSourceValue { get; set; }
     }
