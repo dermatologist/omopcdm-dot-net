@@ -5,9 +5,9 @@ namespace omopcdmlib.Models
 {
     public partial class ConceptClass
     {
-        public long Id { get; set; }
+        public int Id { get; set; }
         public string ConceptClassId { get; set; }
         public string ConceptClassName { get; set; }
-        public long ConceptClassConceptId { get; set; }
+        public int ConceptClassConceptId { get; set; }
     }
 }

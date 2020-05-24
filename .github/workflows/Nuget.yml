@@ -1,0 +1,30 @@
+name: publish to Github nuget packages
+on:
+  push:
+    branches:
+      - master # Default release branch
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    name: Update NuGet package
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v1
+
+      - name: Setup .NET Core @ Latest
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.0.100
+          source-url: https://api.nuget.org
+        env:
+          NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}        
+
+      - name: Build solution and generate NuGet package
+        run: |  
+          cd omopcdmlib
+          dotnet pack -c Release -o out  
+
+      - name: Push generated package to GitHub registry
+        run: dotnet nuget push ./omopcdmlib/out/*.nupkg --no-symbols true

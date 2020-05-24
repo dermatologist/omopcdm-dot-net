@@ -5,11 +5,11 @@ namespace omopcdmlib.Models
 {
     public partial class PayerPlanPeriod
     {
-        public long Id { get; set; }
-        public long PayerPlanPeriodId { get; set; }
-        public long PersonId { get; set; }
-        public byte[] PayerPlanPeriodStartDate { get; set; }
-        public byte[] PayerPlanPeriodEndDate { get; set; }
+        public int Id { get; set; }
+        public int PayerPlanPeriodId { get; set; }
+        public int PersonId { get; set; }
+        public string PayerPlanPeriodStartDate { get; set; }
+        public string PayerPlanPeriodEndDate { get; set; }
         public string PayerSourceValue { get; set; }
         public string PlanSourceValue { get; set; }
         public string FamilySourceValue { get; set; }

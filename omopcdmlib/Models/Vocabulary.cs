@@ -9,6 +9,6 @@ namespace omopcdmlib.Models
         public string VocabularyName { get; set; }
         public string VocabularyReference { get; set; }
         public string VocabularyVersion { get; set; }
-        public long VocabularyConceptId { get; set; }
+        public int VocabularyConceptId { get; set; }
     }
 }

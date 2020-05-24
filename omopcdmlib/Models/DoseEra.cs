@@ -5,13 +5,13 @@ namespace omopcdmlib.Models
 {
     public partial class DoseEra
     {
-        public long Id { get; set; }
-        public long DoseEraId { get; set; }
-        public long PersonId { get; set; }
-        public long DrugConceptId { get; set; }
-        public long UnitConceptId { get; set; }
-        public byte[] DoseValue { get; set; }
-        public byte[] DoseEraStartDate { get; set; }
-        public byte[] DoseEraEndDate { get; set; }
+        public int Id { get; set; }
+        public int DoseEraId { get; set; }
+        public int PersonId { get; set; }
+        public int DrugConceptId { get; set; }
+        public int UnitConceptId { get; set; }
+        public string DoseValue { get; set; }
+        public string DoseEraStartDate { get; set; }
+        public string DoseEraEndDate { get; set; }
     }
 }

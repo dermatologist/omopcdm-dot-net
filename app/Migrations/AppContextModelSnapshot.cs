@@ -18,11 +18,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.AttributeDefinition", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("AttributeDefinitionId")
+                    b.Property<int>("AttributeDefinitionId")
                         .HasColumnName("attribute_definition_id")
                         .HasColumnType("INTEGER");
 
@@ -39,7 +39,7 @@ namespace app.Migrations
                         .HasColumnName("attribute_syntax")
                         .HasColumnType("TEXT");
 
-                    b.Property<long>("AttributeTypeConceptId")
+                    b.Property<int>("AttributeTypeConceptId")
                         .HasColumnName("attribute_type_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -50,11 +50,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.CareSite", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("CareSiteId")
+                    b.Property<int>("CareSiteId")
                         .HasColumnName("care_site_id")
                         .HasColumnType("INTEGER");
 
@@ -66,11 +66,11 @@ namespace app.Migrations
                         .HasColumnName("care_site_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("LocationId")
+                    b.Property<int?>("LocationId")
                         .HasColumnName("location_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("PlaceOfServiceConceptId")
+                    b.Property<int?>("PlaceOfServiceConceptId")
                         .HasColumnName("place_of_service_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -85,7 +85,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.CdmSource", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -137,11 +137,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Cohort", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("CohortDefinitionId")
+                    b.Property<int>("CohortDefinitionId")
                         .HasColumnName("cohort_definition_id")
                         .HasColumnType("INTEGER");
 
@@ -155,7 +155,7 @@ namespace app.Migrations
                         .HasColumnName("cohort_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("SubjectId")
+                    b.Property<int>("SubjectId")
                         .HasColumnName("subject_id")
                         .HasColumnType("INTEGER");
 
@@ -166,15 +166,15 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.CohortAttribute", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("AttributeDefinitionId")
+                    b.Property<int>("AttributeDefinitionId")
                         .HasColumnName("attribute_definition_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("CohortDefinitionId")
+                    b.Property<int>("CohortDefinitionId")
                         .HasColumnName("cohort_definition_id")
                         .HasColumnType("INTEGER");
 
@@ -188,11 +188,11 @@ namespace app.Migrations
                         .HasColumnName("cohort_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("SubjectId")
+                    b.Property<int>("SubjectId")
                         .HasColumnName("subject_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ValueAsConceptId")
+                    b.Property<int?>("ValueAsConceptId")
                         .HasColumnName("value_as_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -207,7 +207,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.CohortDefinition", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -215,7 +215,7 @@ namespace app.Migrations
                         .HasColumnName("cohort_definition_description")
                         .HasColumnType("TEXT");
 
-                    b.Property<long>("CohortDefinitionId")
+                    b.Property<int>("CohortDefinitionId")
                         .HasColumnName("cohort_definition_id")
                         .HasColumnType("INTEGER");
 
@@ -232,11 +232,11 @@ namespace app.Migrations
                         .HasColumnName("cohort_initiation_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DefinitionTypeConceptId")
+                    b.Property<int>("DefinitionTypeConceptId")
                         .HasColumnName("definition_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("SubjectConceptId")
+                    b.Property<int>("SubjectConceptId")
                         .HasColumnName("subject_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -247,7 +247,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Concept", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -261,7 +261,7 @@ namespace app.Migrations
                         .HasColumnName("concept_code")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("ConceptId")
+                    b.Property<int>("ConceptId")
                         .HasColumnName("concept_id")
                         .HasColumnType("INTEGER");
 
@@ -305,23 +305,23 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConceptAncestor", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("AncestorConceptId")
+                    b.Property<int>("AncestorConceptId")
                         .HasColumnName("ancestor_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DescendantConceptId")
+                    b.Property<int>("DescendantConceptId")
                         .HasColumnName("descendant_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("MaxLevelsOfSeparation")
+                    b.Property<int>("MaxLevelsOfSeparation")
                         .HasColumnName("max_levels_of_separation")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("MinLevelsOfSeparation")
+                    b.Property<int>("MinLevelsOfSeparation")
                         .HasColumnName("min_levels_of_separation")
                         .HasColumnType("INTEGER");
 
@@ -332,11 +332,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConceptClass", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConceptClassConceptId")
+                    b.Property<int>("ConceptClassConceptId")
                         .HasColumnName("concept_class_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -357,15 +357,15 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConceptRelationship", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConceptId1")
+                    b.Property<int>("ConceptId1")
                         .HasColumnName("concept_id_1")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConceptId2")
+                    b.Property<int>("ConceptId2")
                         .HasColumnName("concept_id_2")
                         .HasColumnType("INTEGER");
 
@@ -395,11 +395,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConceptSynonym", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConceptId")
+                    b.Property<int>("ConceptId")
                         .HasColumnName("concept_id")
                         .HasColumnType("INTEGER");
 
@@ -408,7 +408,7 @@ namespace app.Migrations
                         .HasColumnName("concept_synonym_name")
                         .HasColumnType("VARCHAR(1000)");
 
-                    b.Property<long>("LanguageConceptId")
+                    b.Property<int>("LanguageConceptId")
                         .HasColumnName("language_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -419,11 +419,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConditionEra", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConditionConceptId")
+                    b.Property<int>("ConditionConceptId")
                         .HasColumnName("condition_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -432,7 +432,7 @@ namespace app.Migrations
                         .HasColumnName("condition_era_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ConditionEraId")
+                    b.Property<int>("ConditionEraId")
                         .HasColumnName("condition_era_id")
                         .HasColumnType("INTEGER");
 
@@ -441,11 +441,11 @@ namespace app.Migrations
                         .HasColumnName("condition_era_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long?>("ConditionOccurrenceCount")
+                    b.Property<int?>("ConditionOccurrenceCount")
                         .HasColumnName("condition_occurrence_count")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -456,11 +456,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ConditionOccurrence", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ConditionConceptId")
+                    b.Property<int>("ConditionConceptId")
                         .HasColumnName("condition_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -468,11 +468,11 @@ namespace app.Migrations
                         .HasColumnName("condition_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ConditionOccurrenceId")
+                    b.Property<int>("ConditionOccurrenceId")
                         .HasColumnName("condition_occurrence_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ConditionSourceConceptId")
+                    b.Property<int?>("ConditionSourceConceptId")
                         .HasColumnName("condition_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -485,15 +485,15 @@ namespace app.Migrations
                         .HasColumnName("condition_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ConditionTypeConceptId")
+                    b.Property<int>("ConditionTypeConceptId")
                         .HasColumnName("condition_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
@@ -501,7 +501,7 @@ namespace app.Migrations
                         .HasColumnName("stop_reason")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -512,15 +512,15 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Death", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CauseConceptId")
+                    b.Property<int?>("CauseConceptId")
                         .HasColumnName("cause_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CauseSourceConceptId")
+                    b.Property<int?>("CauseSourceConceptId")
                         .HasColumnName("cause_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -533,11 +533,11 @@ namespace app.Migrations
                         .HasColumnName("death_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DeathTypeConceptId")
+                    b.Property<int>("DeathTypeConceptId")
                         .HasColumnName("death_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -548,19 +548,19 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DeviceCost", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CurrencyConceptId")
+                    b.Property<int?>("CurrencyConceptId")
                         .HasColumnName("currency_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DeviceCostId")
+                    b.Property<int>("DeviceCostId")
                         .HasColumnName("device_cost_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DeviceExposureId")
+                    b.Property<int>("DeviceExposureId")
                         .HasColumnName("device_exposure_id")
                         .HasColumnType("INTEGER");
 
@@ -584,7 +584,7 @@ namespace app.Migrations
                         .HasColumnName("paid_toward_deductible")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("PayerPlanPeriodId")
+                    b.Property<int?>("PayerPlanPeriodId")
                         .HasColumnName("payer_plan_period_id")
                         .HasColumnType("INTEGER");
 
@@ -603,11 +603,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DeviceExposure", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DeviceConceptId")
+                    b.Property<int>("DeviceConceptId")
                         .HasColumnName("device_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -615,7 +615,7 @@ namespace app.Migrations
                         .HasColumnName("device_exposure_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DeviceExposureId")
+                    b.Property<int>("DeviceExposureId")
                         .HasColumnName("device_exposure_id")
                         .HasColumnType("INTEGER");
 
@@ -624,7 +624,7 @@ namespace app.Migrations
                         .HasColumnName("device_exposure_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long?>("DeviceSourceConceptId")
+                    b.Property<int?>("DeviceSourceConceptId")
                         .HasColumnName("device_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -632,19 +632,19 @@ namespace app.Migrations
                         .HasColumnName("device_source_value")
                         .HasColumnType("VARCHAR(100)");
 
-                    b.Property<long>("DeviceTypeConceptId")
+                    b.Property<int>("DeviceTypeConceptId")
                         .HasColumnName("device_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("Quantity")
+                    b.Property<int?>("Quantity")
                         .HasColumnName("quantity")
                         .HasColumnType("INTEGER");
 
@@ -652,7 +652,7 @@ namespace app.Migrations
                         .HasColumnName("unique_device_id")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -667,7 +667,7 @@ namespace app.Migrations
                         .HasColumnName("domain_id")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long>("DomainConceptId")
+                    b.Property<int>("DomainConceptId")
                         .HasColumnName("domain_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -683,7 +683,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DoseEra", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -692,7 +692,7 @@ namespace app.Migrations
                         .HasColumnName("dose_era_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DoseEraId")
+                    b.Property<int>("DoseEraId")
                         .HasColumnName("dose_era_id")
                         .HasColumnType("INTEGER");
 
@@ -706,15 +706,15 @@ namespace app.Migrations
                         .HasColumnName("dose_value")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long>("DrugConceptId")
+                    b.Property<int>("DrugConceptId")
                         .HasColumnName("drug_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("UnitConceptId")
+                    b.Property<int>("UnitConceptId")
                         .HasColumnName("unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -725,7 +725,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DrugCost", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -733,7 +733,7 @@ namespace app.Migrations
                         .HasColumnName("average_wholesale_price")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("CurrencyConceptId")
+                    b.Property<int?>("CurrencyConceptId")
                         .HasColumnName("currency_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -741,11 +741,11 @@ namespace app.Migrations
                         .HasColumnName("dispensing_fee")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long>("DrugCostId")
+                    b.Property<int>("DrugCostId")
                         .HasColumnName("drug_cost_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DrugExposureId")
+                    b.Property<int>("DrugExposureId")
                         .HasColumnName("drug_exposure_id")
                         .HasColumnType("INTEGER");
 
@@ -773,7 +773,7 @@ namespace app.Migrations
                         .HasColumnName("paid_toward_deductible")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("PayerPlanPeriodId")
+                    b.Property<int?>("PayerPlanPeriodId")
                         .HasColumnName("payer_plan_period_id")
                         .HasColumnType("INTEGER");
 
@@ -792,11 +792,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DrugEra", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DrugConceptId")
+                    b.Property<int>("DrugConceptId")
                         .HasColumnName("drug_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -805,7 +805,7 @@ namespace app.Migrations
                         .HasColumnName("drug_era_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DrugEraId")
+                    b.Property<int>("DrugEraId")
                         .HasColumnName("drug_era_id")
                         .HasColumnType("INTEGER");
 
@@ -814,15 +814,15 @@ namespace app.Migrations
                         .HasColumnName("drug_era_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long?>("DrugExposureCount")
+                    b.Property<int?>("DrugExposureCount")
                         .HasColumnName("drug_exposure_count")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("GapDays")
+                    b.Property<int?>("GapDays")
                         .HasColumnName("gap_days")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -833,15 +833,15 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DrugExposure", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("DaysSupply")
+                    b.Property<int?>("DaysSupply")
                         .HasColumnName("days_supply")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("DoseUnitConceptId")
+                    b.Property<int?>("DoseUnitConceptId")
                         .HasColumnName("dose_unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -849,7 +849,7 @@ namespace app.Migrations
                         .HasColumnName("dose_unit_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("DrugConceptId")
+                    b.Property<int>("DrugConceptId")
                         .HasColumnName("drug_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -857,7 +857,7 @@ namespace app.Migrations
                         .HasColumnName("drug_exposure_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("DrugExposureId")
+                    b.Property<int>("DrugExposureId")
                         .HasColumnName("drug_exposure_id")
                         .HasColumnType("INTEGER");
 
@@ -866,7 +866,7 @@ namespace app.Migrations
                         .HasColumnName("drug_exposure_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long?>("DrugSourceConceptId")
+                    b.Property<int?>("DrugSourceConceptId")
                         .HasColumnName("drug_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -874,7 +874,7 @@ namespace app.Migrations
                         .HasColumnName("drug_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("DrugTypeConceptId")
+                    b.Property<int>("DrugTypeConceptId")
                         .HasColumnName("drug_type_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -886,11 +886,11 @@ namespace app.Migrations
                         .HasColumnName("lot_number")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
@@ -898,11 +898,11 @@ namespace app.Migrations
                         .HasColumnName("quantity")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("Refills")
+                    b.Property<int?>("Refills")
                         .HasColumnName("refills")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("RouteConceptId")
+                    b.Property<int?>("RouteConceptId")
                         .HasColumnName("route_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -918,7 +918,7 @@ namespace app.Migrations
                         .HasColumnName("stop_reason")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -929,11 +929,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.DrugStrength", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("AmountUnitConceptId")
+                    b.Property<int?>("AmountUnitConceptId")
                         .HasColumnName("amount_unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -941,11 +941,11 @@ namespace app.Migrations
                         .HasColumnName("amount_value")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("BoxSize")
+                    b.Property<int?>("BoxSize")
                         .HasColumnName("box_size")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("DenominatorUnitConceptId")
+                    b.Property<int?>("DenominatorUnitConceptId")
                         .HasColumnName("denominator_unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -953,11 +953,11 @@ namespace app.Migrations
                         .HasColumnName("denominator_value")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long>("DrugConceptId")
+                    b.Property<int>("DrugConceptId")
                         .HasColumnName("drug_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("IngredientConceptId")
+                    b.Property<int>("IngredientConceptId")
                         .HasColumnName("ingredient_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -965,7 +965,7 @@ namespace app.Migrations
                         .HasColumnName("invalid_reason")
                         .HasColumnType("VARCHAR(1)");
 
-                    b.Property<long?>("NumeratorUnitConceptId")
+                    b.Property<int?>("NumeratorUnitConceptId")
                         .HasColumnName("numerator_unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -990,27 +990,27 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.FactRelationship", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DomainConceptId1")
+                    b.Property<int>("DomainConceptId1")
                         .HasColumnName("domain_concept_id_1")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("DomainConceptId2")
+                    b.Property<int>("DomainConceptId2")
                         .HasColumnName("domain_concept_id_2")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("FactId1")
+                    b.Property<int>("FactId1")
                         .HasColumnName("fact_id_1")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("FactId2")
+                    b.Property<int>("FactId2")
                         .HasColumnName("fact_id_2")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("RelationshipConceptId")
+                    b.Property<int>("RelationshipConceptId")
                         .HasColumnName("relationship_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1021,7 +1021,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Location", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1041,7 +1041,7 @@ namespace app.Migrations
                         .HasColumnName("county")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long>("LocationId")
+                    b.Property<int>("LocationId")
                         .HasColumnName("location_id")
                         .HasColumnType("INTEGER");
 
@@ -1064,11 +1064,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Measurement", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("MeasurementConceptId")
+                    b.Property<int>("MeasurementConceptId")
                         .HasColumnName("measurement_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1077,11 +1077,11 @@ namespace app.Migrations
                         .HasColumnName("measurement_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("MeasurementId")
+                    b.Property<int>("MeasurementId")
                         .HasColumnName("measurement_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("MeasurementSourceConceptId")
+                    b.Property<int?>("MeasurementSourceConceptId")
                         .HasColumnName("measurement_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1093,19 +1093,19 @@ namespace app.Migrations
                         .HasColumnName("measurement_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("MeasurementTypeConceptId")
+                    b.Property<int>("MeasurementTypeConceptId")
                         .HasColumnName("measurement_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("OperatorConceptId")
+                    b.Property<int?>("OperatorConceptId")
                         .HasColumnName("operator_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
@@ -1117,7 +1117,7 @@ namespace app.Migrations
                         .HasColumnName("range_low")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("UnitConceptId")
+                    b.Property<int?>("UnitConceptId")
                         .HasColumnName("unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1125,7 +1125,7 @@ namespace app.Migrations
                         .HasColumnName("unit_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("ValueAsConceptId")
+                    b.Property<int?>("ValueAsConceptId")
                         .HasColumnName("value_as_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1137,7 +1137,7 @@ namespace app.Migrations
                         .HasColumnName("value_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -1148,7 +1148,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Note", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1157,7 +1157,7 @@ namespace app.Migrations
                         .HasColumnName("note_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("NoteId")
+                    b.Property<int>("NoteId")
                         .HasColumnName("note_id")
                         .HasColumnType("INTEGER");
 
@@ -1174,19 +1174,19 @@ namespace app.Migrations
                         .HasColumnName("note_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("NoteTypeConceptId")
+                    b.Property<int>("NoteTypeConceptId")
                         .HasColumnName("note_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -1197,11 +1197,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Observation", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ObservationConceptId")
+                    b.Property<int>("ObservationConceptId")
                         .HasColumnName("observation_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1210,11 +1210,11 @@ namespace app.Migrations
                         .HasColumnName("observation_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ObservationId")
+                    b.Property<int>("ObservationId")
                         .HasColumnName("observation_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ObservationSourceConceptId")
+                    b.Property<int?>("ObservationSourceConceptId")
                         .HasColumnName("observation_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1226,19 +1226,19 @@ namespace app.Migrations
                         .HasColumnName("observation_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("ObservationTypeConceptId")
+                    b.Property<int>("ObservationTypeConceptId")
                         .HasColumnName("observation_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("QualifierConceptId")
+                    b.Property<int?>("QualifierConceptId")
                         .HasColumnName("qualifier_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1246,7 +1246,7 @@ namespace app.Migrations
                         .HasColumnName("qualifier_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("UnitConceptId")
+                    b.Property<int?>("UnitConceptId")
                         .HasColumnName("unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1254,7 +1254,7 @@ namespace app.Migrations
                         .HasColumnName("unit_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("ValueAsConceptId")
+                    b.Property<int?>("ValueAsConceptId")
                         .HasColumnName("value_as_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1266,7 +1266,7 @@ namespace app.Migrations
                         .HasColumnName("value_as_string")
                         .HasColumnType("VARCHAR(60)");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -1277,7 +1277,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ObservationPeriod", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1286,7 +1286,7 @@ namespace app.Migrations
                         .HasColumnName("observation_period_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ObservationPeriodId")
+                    b.Property<int>("ObservationPeriodId")
                         .HasColumnName("observation_period_id")
                         .HasColumnType("INTEGER");
 
@@ -1295,11 +1295,11 @@ namespace app.Migrations
                         .HasColumnName("observation_period_start_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("PeriodTypeConceptId")
+                    b.Property<int>("PeriodTypeConceptId")
                         .HasColumnName("period_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -1310,7 +1310,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.PayerPlanPeriod", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1323,7 +1323,7 @@ namespace app.Migrations
                         .HasColumnName("payer_plan_period_end_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("PayerPlanPeriodId")
+                    b.Property<int>("PayerPlanPeriodId")
                         .HasColumnName("payer_plan_period_id")
                         .HasColumnType("INTEGER");
 
@@ -1336,7 +1336,7 @@ namespace app.Migrations
                         .HasColumnName("payer_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -1351,23 +1351,23 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Person", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CareSiteId")
+                    b.Property<int?>("CareSiteId")
                         .HasColumnName("care_site_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("DayOfBirth")
+                    b.Property<int?>("DayOfBirth")
                         .HasColumnName("day_of_birth")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("EthnicityConceptId")
+                    b.Property<int>("EthnicityConceptId")
                         .HasColumnName("ethnicity_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("EthnicitySourceConceptId")
+                    b.Property<int?>("EthnicitySourceConceptId")
                         .HasColumnName("ethnicity_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1375,11 +1375,11 @@ namespace app.Migrations
                         .HasColumnName("ethnicity_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("GenderConceptId")
+                    b.Property<int>("GenderConceptId")
                         .HasColumnName("gender_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("GenderSourceConceptId")
+                    b.Property<int?>("GenderSourceConceptId")
                         .HasColumnName("gender_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1387,15 +1387,15 @@ namespace app.Migrations
                         .HasColumnName("gender_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("LocationId")
+                    b.Property<int?>("LocationId")
                         .HasColumnName("location_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("MonthOfBirth")
+                    b.Property<int?>("MonthOfBirth")
                         .HasColumnName("month_of_birth")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -1403,15 +1403,15 @@ namespace app.Migrations
                         .HasColumnName("person_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("RaceConceptId")
+                    b.Property<int>("RaceConceptId")
                         .HasColumnName("race_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("RaceSourceConceptId")
+                    b.Property<int?>("RaceSourceConceptId")
                         .HasColumnName("race_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1423,7 +1423,7 @@ namespace app.Migrations
                         .HasColumnName("time_of_birth")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("YearOfBirth")
+                    b.Property<int>("YearOfBirth")
                         .HasColumnName("year_of_birth")
                         .HasColumnType("INTEGER");
 
@@ -1434,11 +1434,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ProcedureCost", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CurrencyConceptId")
+                    b.Property<int?>("CurrencyConceptId")
                         .HasColumnName("currency_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1462,19 +1462,19 @@ namespace app.Migrations
                         .HasColumnName("paid_toward_deductible")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("PayerPlanPeriodId")
+                    b.Property<int?>("PayerPlanPeriodId")
                         .HasColumnName("payer_plan_period_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ProcedureCostId")
+                    b.Property<int>("ProcedureCostId")
                         .HasColumnName("procedure_cost_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ProcedureOccurrenceId")
+                    b.Property<int>("ProcedureOccurrenceId")
                         .HasColumnName("procedure_occurrence_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("RevenueCodeConceptId")
+                    b.Property<int?>("RevenueCodeConceptId")
                         .HasColumnName("revenue_code_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1497,19 +1497,19 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.ProcedureOccurrence", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ModifierConceptId")
+                    b.Property<int?>("ModifierConceptId")
                         .HasColumnName("modifier_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("ProcedureConceptId")
+                    b.Property<int>("ProcedureConceptId")
                         .HasColumnName("procedure_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1518,11 +1518,11 @@ namespace app.Migrations
                         .HasColumnName("procedure_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("ProcedureOccurrenceId")
+                    b.Property<int>("ProcedureOccurrenceId")
                         .HasColumnName("procedure_occurrence_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProcedureSourceConceptId")
+                    b.Property<int?>("ProcedureSourceConceptId")
                         .HasColumnName("procedure_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1530,11 +1530,11 @@ namespace app.Migrations
                         .HasColumnName("procedure_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("ProcedureTypeConceptId")
+                    b.Property<int>("ProcedureTypeConceptId")
                         .HasColumnName("procedure_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
@@ -1542,11 +1542,11 @@ namespace app.Migrations
                         .HasColumnName("qualifier_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("Quantity")
+                    b.Property<int?>("Quantity")
                         .HasColumnName("quantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("VisitOccurrenceId")
+                    b.Property<int?>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -1557,11 +1557,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Provider", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CareSiteId")
+                    b.Property<int?>("CareSiteId")
                         .HasColumnName("care_site_id")
                         .HasColumnType("INTEGER");
 
@@ -1569,11 +1569,11 @@ namespace app.Migrations
                         .HasColumnName("dea")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long?>("GenderConceptId")
+                    b.Property<int?>("GenderConceptId")
                         .HasColumnName("gender_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("GenderSourceConceptId")
+                    b.Property<int?>("GenderSourceConceptId")
                         .HasColumnName("gender_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1585,7 +1585,7 @@ namespace app.Migrations
                         .HasColumnName("npi")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long>("ProviderId")
+                    b.Property<int>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
@@ -1597,11 +1597,11 @@ namespace app.Migrations
                         .HasColumnName("provider_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("SpecialtyConceptId")
+                    b.Property<int?>("SpecialtyConceptId")
                         .HasColumnName("specialty_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("SpecialtySourceConceptId")
+                    b.Property<int?>("SpecialtySourceConceptId")
                         .HasColumnName("specialty_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1609,7 +1609,7 @@ namespace app.Migrations
                         .HasColumnName("specialty_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("YearOfBirth")
+                    b.Property<int?>("YearOfBirth")
                         .HasColumnName("year_of_birth")
                         .HasColumnType("INTEGER");
 
@@ -1620,7 +1620,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Relationship", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1634,7 +1634,7 @@ namespace app.Migrations
                         .HasColumnName("is_hierarchical")
                         .HasColumnType("VARCHAR(1)");
 
-                    b.Property<long>("RelationshipConceptId")
+                    b.Property<int>("RelationshipConceptId")
                         .HasColumnName("relationship_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1660,7 +1660,7 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.SourceToConceptMap", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
@@ -1677,7 +1677,7 @@ namespace app.Migrations
                         .HasColumnName("source_code_description")
                         .HasColumnType("VARCHAR(255)");
 
-                    b.Property<long>("SourceConceptId")
+                    b.Property<int>("SourceConceptId")
                         .HasColumnName("source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1686,7 +1686,7 @@ namespace app.Migrations
                         .HasColumnName("source_vocabulary_id")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long>("TargetConceptId")
+                    b.Property<int>("TargetConceptId")
                         .HasColumnName("target_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1712,11 +1712,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.Specimen", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("AnatomicSiteConceptId")
+                    b.Property<int?>("AnatomicSiteConceptId")
                         .HasColumnName("anatomic_site_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1724,7 +1724,7 @@ namespace app.Migrations
                         .HasColumnName("anatomic_site_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long?>("DiseaseStatusConceptId")
+                    b.Property<int?>("DiseaseStatusConceptId")
                         .HasColumnName("disease_status_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1732,7 +1732,7 @@ namespace app.Migrations
                         .HasColumnName("disease_status_source_value")
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
@@ -1740,7 +1740,7 @@ namespace app.Migrations
                         .HasColumnName("quantity")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long>("SpecimenConceptId")
+                    b.Property<int>("SpecimenConceptId")
                         .HasColumnName("specimen_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1749,7 +1749,7 @@ namespace app.Migrations
                         .HasColumnName("specimen_date")
                         .HasColumnType("DATE");
 
-                    b.Property<long>("SpecimenId")
+                    b.Property<int>("SpecimenId")
                         .HasColumnName("specimen_id")
                         .HasColumnType("INTEGER");
 
@@ -1765,11 +1765,11 @@ namespace app.Migrations
                         .HasColumnName("specimen_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("SpecimenTypeConceptId")
+                    b.Property<int>("SpecimenTypeConceptId")
                         .HasColumnName("specimen_type_concept_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("UnitConceptId")
+                    b.Property<int?>("UnitConceptId")
                         .HasColumnName("unit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1784,11 +1784,11 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.VisitCost", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CurrencyConceptId")
+                    b.Property<int?>("CurrencyConceptId")
                         .HasColumnName("currency_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1812,7 +1812,7 @@ namespace app.Migrations
                         .HasColumnName("paid_toward_deductible")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long?>("PayerPlanPeriodId")
+                    b.Property<int?>("PayerPlanPeriodId")
                         .HasColumnName("payer_plan_period_id")
                         .HasColumnType("INTEGER");
 
@@ -1824,11 +1824,11 @@ namespace app.Migrations
                         .HasColumnName("total_paid")
                         .HasColumnType("NUMERIC");
 
-                    b.Property<long>("VisitCostId")
+                    b.Property<int>("VisitCostId")
                         .HasColumnName("visit_cost_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("VisitOccurrenceId")
+                    b.Property<int>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
@@ -1839,23 +1839,23 @@ namespace app.Migrations
 
             modelBuilder.Entity("omopcdmlib.Models.VisitOccurrence", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .HasColumnName("_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("CareSiteId")
+                    b.Property<int?>("CareSiteId")
                         .HasColumnName("care_site_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("PersonId")
+                    b.Property<int>("PersonId")
                         .HasColumnName("person_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long?>("ProviderId")
+                    b.Property<int?>("ProviderId")
                         .HasColumnName("provider_id")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("VisitConceptId")
+                    b.Property<int>("VisitConceptId")
                         .HasColumnName("visit_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1868,11 +1868,11 @@ namespace app.Migrations
                         .HasColumnName("visit_end_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("VisitOccurrenceId")
+                    b.Property<int>("VisitOccurrenceId")
                         .HasColumnName("visit_occurrence_id")
                         .HasColumnType("BIGINT");
 
-                    b.Property<long?>("VisitSourceConceptId")
+                    b.Property<int?>("VisitSourceConceptId")
                         .HasColumnName("visit_source_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1889,7 +1889,7 @@ namespace app.Migrations
                         .HasColumnName("visit_start_time")
                         .HasColumnType("VARCHAR(10)");
 
-                    b.Property<long>("VisitTypeConceptId")
+                    b.Property<int>("VisitTypeConceptId")
                         .HasColumnName("visit_type_concept_id")
                         .HasColumnType("INTEGER");
 
@@ -1904,7 +1904,7 @@ namespace app.Migrations
                         .HasColumnName("vocabulary_id")
                         .HasColumnType("VARCHAR(20)");
 
-                    b.Property<long>("VocabularyConceptId")
+                    b.Property<int>("VocabularyConceptId")
                         .HasColumnName("vocabulary_concept_id")
                         .HasColumnType("INTEGER");
 

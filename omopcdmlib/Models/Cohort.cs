@@ -5,10 +5,10 @@ namespace omopcdmlib.Models
 {
     public partial class Cohort
     {
-        public long Id { get; set; }
-        public long CohortDefinitionId { get; set; }
-        public long SubjectId { get; set; }
-        public byte[] CohortStartDate { get; set; }
-        public byte[] CohortEndDate { get; set; }
+        public int Id { get; set; }
+        public int CohortDefinitionId { get; set; }
+        public int SubjectId { get; set; }
+        public string CohortStartDate { get; set; }
+        public string CohortEndDate { get; set; }
     }
 }
