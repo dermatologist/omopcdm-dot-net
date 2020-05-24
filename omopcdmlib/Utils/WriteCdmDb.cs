@@ -8,6 +8,7 @@ namespace omopcdmlib.Utils
 {
     public class WriteCdmDb<T> where T : class 
     {
+        // https://github.com/borisdj/EFCore.BulkExtensions
         public void Write(List<T> entity, OmopCdmContext CdmContext)
         {
             
