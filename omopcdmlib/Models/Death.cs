@@ -7,7 +7,7 @@ namespace omopcdmlib.Models
     {
         public int Id { get; set; }
         public int PersonId { get; set; }
-        public byte[] DeathDate { get; set; }
+        public string DeathDate { get; set; }
         public int DeathTypeConceptId { get; set; }
         public int? CauseConceptId { get; set; }
         public string CauseSourceValue { get; set; }

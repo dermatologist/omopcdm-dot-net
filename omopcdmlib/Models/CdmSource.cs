@@ -12,8 +12,8 @@ namespace omopcdmlib.Models
         public string SourceDescription { get; set; }
         public string SourceDocumentationReference { get; set; }
         public string CdmEtlReference { get; set; }
-        public byte[] SourceReleaseDate { get; set; }
-        public byte[] CdmReleaseDate { get; set; }
+        public string SourceReleaseDate { get; set; }
+        public string CdmReleaseDate { get; set; }
         public string CdmVersion { get; set; }
         public string VocabularyVersion { get; set; }
     }

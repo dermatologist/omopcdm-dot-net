@@ -10,8 +10,8 @@ namespace omopcdmlib.Models
         public int PersonId { get; set; }
         public int DrugConceptId { get; set; }
         public int UnitConceptId { get; set; }
-        public byte[] DoseValue { get; set; }
-        public byte[] DoseEraStartDate { get; set; }
-        public byte[] DoseEraEndDate { get; set; }
+        public string DoseValue { get; set; }
+        public string DoseEraStartDate { get; set; }
+        public string DoseEraEndDate { get; set; }
     }
 }

@@ -12,6 +12,6 @@ namespace omopcdmlib.Models
         public int DefinitionTypeConceptId { get; set; }
         public string CohortDefinitionSyntax { get; set; }
         public int SubjectConceptId { get; set; }
-        public byte[] CohortInitiationDate { get; set; }
+        public string CohortInitiationDate { get; set; }
     }
 }

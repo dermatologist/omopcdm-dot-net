@@ -8,8 +8,8 @@ namespace omopcdmlib.Models
         public int Id { get; set; }
         public int ObservationPeriodId { get; set; }
         public int PersonId { get; set; }
-        public byte[] ObservationPeriodStartDate { get; set; }
-        public byte[] ObservationPeriodEndDate { get; set; }
+        public string ObservationPeriodStartDate { get; set; }
+        public string ObservationPeriodEndDate { get; set; }
         public int PeriodTypeConceptId { get; set; }
     }
 }

@@ -9,16 +9,16 @@ namespace omopcdmlib.Models
         public int DrugExposureId { get; set; }
         public int PersonId { get; set; }
         public int DrugConceptId { get; set; }
-        public byte[] DrugExposureStartDate { get; set; }
-        public byte[] DrugExposureEndDate { get; set; }
+        public string DrugExposureStartDate { get; set; }
+        public string DrugExposureEndDate { get; set; }
         public int DrugTypeConceptId { get; set; }
         public string StopReason { get; set; }
         public int? Refills { get; set; }
-        public byte[] Quantity { get; set; }
+        public string Quantity { get; set; }
         public int? DaysSupply { get; set; }
         public string Sig { get; set; }
         public int? RouteConceptId { get; set; }
-        public byte[] EffectiveDrugDose { get; set; }
+        public string EffectiveDrugDose { get; set; }
         public int? DoseUnitConceptId { get; set; }
         public string LotNumber { get; set; }
         public int? ProviderId { get; set; }

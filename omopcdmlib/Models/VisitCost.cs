@@ -9,13 +9,13 @@ namespace omopcdmlib.Models
         public int VisitCostId { get; set; }
         public int VisitOccurrenceId { get; set; }
         public int? CurrencyConceptId { get; set; }
-        public byte[] PaidCopay { get; set; }
-        public byte[] PaidCoinsurance { get; set; }
-        public byte[] PaidTowardDeductible { get; set; }
-        public byte[] PaidByPayer { get; set; }
-        public byte[] PaidByCoordinationBenefits { get; set; }
-        public byte[] TotalOutOfPocket { get; set; }
-        public byte[] TotalPaid { get; set; }
+        public string PaidCopay { get; set; }
+        public string PaidCoinsurance { get; set; }
+        public string PaidTowardDeductible { get; set; }
+        public string PaidByPayer { get; set; }
+        public string PaidByCoordinationBenefits { get; set; }
+        public string TotalOutOfPocket { get; set; }
+        public string TotalPaid { get; set; }
         public int? PayerPlanPeriodId { get; set; }
     }
 }

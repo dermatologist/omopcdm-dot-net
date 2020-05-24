@@ -9,15 +9,15 @@ namespace omopcdmlib.Models
         public int MeasurementId { get; set; }
         public int PersonId { get; set; }
         public int MeasurementConceptId { get; set; }
-        public byte[] MeasurementDate { get; set; }
+        public string MeasurementDate { get; set; }
         public string MeasurementTime { get; set; }
         public int MeasurementTypeConceptId { get; set; }
         public int? OperatorConceptId { get; set; }
-        public byte[] ValueAsNumber { get; set; }
+        public string ValueAsNumber { get; set; }
         public int? ValueAsConceptId { get; set; }
         public int? UnitConceptId { get; set; }
-        public byte[] RangeLow { get; set; }
-        public byte[] RangeHigh { get; set; }
+        public string RangeLow { get; set; }
+        public string RangeHigh { get; set; }
         public int? ProviderId { get; set; }
         public int? VisitOccurrenceId { get; set; }
         public string MeasurementSourceValue { get; set; }

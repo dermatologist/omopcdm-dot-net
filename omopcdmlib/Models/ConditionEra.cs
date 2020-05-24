@@ -9,8 +9,8 @@ namespace omopcdmlib.Models
         public int ConditionEraId { get; set; }
         public int PersonId { get; set; }
         public int ConditionConceptId { get; set; }
-        public byte[] ConditionEraStartDate { get; set; }
-        public byte[] ConditionEraEndDate { get; set; }
+        public string ConditionEraStartDate { get; set; }
+        public string ConditionEraEndDate { get; set; }
         public int? ConditionOccurrenceCount { get; set; }
     }
 }

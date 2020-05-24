@@ -10,9 +10,9 @@ namespace omopcdmlib.Models
         public int PersonId { get; set; }
         public int SpecimenConceptId { get; set; }
         public int SpecimenTypeConceptId { get; set; }
-        public byte[] SpecimenDate { get; set; }
+        public string SpecimenDate { get; set; }
         public string SpecimenTime { get; set; }
-        public byte[] Quantity { get; set; }
+        public string Quantity { get; set; }
         public int? UnitConceptId { get; set; }
         public int? AnatomicSiteConceptId { get; set; }
         public int? DiseaseStatusConceptId { get; set; }

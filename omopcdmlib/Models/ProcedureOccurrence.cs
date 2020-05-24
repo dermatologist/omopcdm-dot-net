@@ -9,7 +9,7 @@ namespace omopcdmlib.Models
         public int ProcedureOccurrenceId { get; set; }
         public int PersonId { get; set; }
         public int ProcedureConceptId { get; set; }
-        public byte[] ProcedureDate { get; set; }
+        public string ProcedureDate { get; set; }
         public int ProcedureTypeConceptId { get; set; }
         public int? ModifierConceptId { get; set; }
         public int? Quantity { get; set; }

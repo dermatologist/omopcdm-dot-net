@@ -12,8 +12,8 @@ namespace omopcdmlib.Models
         public string SourceCodeDescription { get; set; }
         public int TargetConceptId { get; set; }
         public string TargetVocabularyId { get; set; }
-        public byte[] ValidStartDate { get; set; }
-        public byte[] ValidEndDate { get; set; }
+        public string ValidStartDate { get; set; }
+        public string ValidEndDate { get; set; }
         public string InvalidReason { get; set; }
     }
 }

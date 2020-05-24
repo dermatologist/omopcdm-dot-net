@@ -9,8 +9,8 @@ namespace omopcdmlib.Models
         public int DeviceExposureId { get; set; }
         public int PersonId { get; set; }
         public int DeviceConceptId { get; set; }
-        public byte[] DeviceExposureStartDate { get; set; }
-        public byte[] DeviceExposureEndDate { get; set; }
+        public string DeviceExposureStartDate { get; set; }
+        public string DeviceExposureEndDate { get; set; }
         public int DeviceTypeConceptId { get; set; }
         public string UniqueDeviceId { get; set; }
         public int? Quantity { get; set; }

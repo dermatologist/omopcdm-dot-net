@@ -9,10 +9,10 @@ namespace omopcdmlib.Models
         public int ObservationId { get; set; }
         public int PersonId { get; set; }
         public int ObservationConceptId { get; set; }
-        public byte[] ObservationDate { get; set; }
+        public string ObservationDate { get; set; }
         public string ObservationTime { get; set; }
         public int ObservationTypeConceptId { get; set; }
-        public byte[] ValueAsNumber { get; set; }
+        public string ValueAsNumber { get; set; }
         public string ValueAsString { get; set; }
         public int? ValueAsConceptId { get; set; }
         public int? QualifierConceptId { get; set; }

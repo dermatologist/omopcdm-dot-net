@@ -13,8 +13,8 @@ namespace omopcdmlib.Models
         public string ConceptClassId { get; set; }
         public string StandardConcept { get; set; }
         public string ConceptCode { get; set; }
-        public byte[] ValidStartDate { get; set; }
-        public byte[] ValidEndDate { get; set; }
+        public string ValidStartDate { get; set; }
+        public string ValidEndDate { get; set; }
         public string InvalidReason { get; set; }
 
         public string GetNameForTest {
