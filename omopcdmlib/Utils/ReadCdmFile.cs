@@ -57,6 +57,10 @@ namespace omopcdmlib.Utils
                 {  
                     // Convert field names to ClassNames before checking Ex: concept_id to ConceptId
                     if (pro.Name == TitleCaseConvert(column.ColumnName))
+                    {
+                        // Null values to 0
+                        if("" == (string)dr[column.ColumnName])
+                            dr[column.ColumnName] = "0";
                         try // setting a string value
                         {
                             pro.SetValue(obj, dr[column.ColumnName], null);
@@ -64,6 +68,7 @@ namespace omopcdmlib.Utils
                         {
                             pro.SetValue(obj, Int32.Parse((string)dr[column.ColumnName]), null);
                         }
+                    }
                     else if (pro.Name == "Id")
                         pro.SetValue(obj, id, null);
                     else  

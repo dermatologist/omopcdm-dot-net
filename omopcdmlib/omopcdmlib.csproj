@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CsvHelper" Version="15.0.5" />
     <PackageReference Include="EFCore.BulkExtensions" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,7 +15,7 @@
   
   <PropertyGroup>
     <PackageId>omopcdmlib</PackageId>
-    <Version>1.2.10</Version>
+    <Version>1.2.12</Version>
     <Authors>dermatologist</Authors>
     <Company>GitHub</Company>
     <PackageDescription>Package with OMOP CDM models</PackageDescription>

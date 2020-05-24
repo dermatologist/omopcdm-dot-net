@@ -9,7 +9,7 @@ namespace omopcdmlib.testing
     public class CreateVocabTest
     {
         [Fact]
-        public void TestingReadCsv()
+        public void TestingReadCsvConcept()
         {
             var start = new ReadCdmFile<Concept>();
             var actual = start.Read("/scratch/beapen/cdm5-umls/CONCEPT.csv", 20);
@@ -18,6 +18,14 @@ namespace omopcdmlib.testing
             {
                 Console.WriteLine(actual[i].ConceptName);
             }
+            Assert.NotEmpty(actual);
+        }
+        [Fact]
+        public void TestingReadCsvDrugStrength()
+        {
+            var start = new ReadCdmFile<DrugStrength>();
+            var actual = start.Read("/scratch/beapen/cdm5-umls/DRUG_STRENGTH.csv", 20);
+            Console.WriteLine(actual.Count);
             Assert.NotEmpty(actual);
         }
 
