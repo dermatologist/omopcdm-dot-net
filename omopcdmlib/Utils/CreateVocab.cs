@@ -27,52 +27,31 @@ namespace omopcdmlib.Utils
 
         public void Create(){
 
-            // // var reader = new StreamReader(VocabPath + "CONCEPT.csv");
-            // // var csvReader = new CsvReader(reader);
-            // // var concepts = csvReader.GetRecords<Concept>();
-            //
-            // var config = new CsvHelper.Configuration.CsvConfiguration(CultureInfo.InvariantCulture)
-            // {
-            //     HasHeaderRecord = true,
-            //     HeaderValidated = null,
-            //     MissingFieldFound = null,
-            //     IgnoreBlankLines = false,
-            //     Delimiter = "\t",
-            //     PrepareHeaderForMatch = (string header, int index) => TitleCaseConvert(header)
-            // };
-            // using var reader = new StreamReader(VocabPath + "CONCEPT.csv");
-            // using var csv = new CsvReader(reader, config);
-            //
-            // var concepts = csv.GetRecords<Concept>().ToList();
-            // //List<Concept> concepts = records.ToList();
-
             var omopreader = new OmopReadCsv<Concept>();
             var concepts = omopreader.Read(VocabPath + "CONCEPT.csv");
-            var omopwriter = new OmopWriteDb<Concept>();
-            omopwriter.omopwrite(concepts, CdmContext);
-            // if (CdmContext.Database.IsSqlite())
-            // {
-            //     using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())
-            //     {
-            //         connection.Open();
-            //         using (var transaction = connection.BeginTransaction())
-            //         {
-            //             var bulkConfig = new BulkConfig() { SqliteConnection = connection, SqliteTransaction = transaction };
-            //             CdmContext.BulkInsert(concepts, bulkConfig);
-            //             transaction.Commit();
-            //         }
-            //     }
-            // }
-            // else
-            // {
-            //     CdmContext.BulkInsert(concepts);
-            //     using (var transaction = CdmContext.Database.BeginTransaction())
-            //     {
-            //         CdmContext.BulkInsert(concepts);
-            //         transaction.Commit();
-            //     }
-            //     
-            // }
+            if (CdmContext.Database.IsSqlite())
+            {
+                using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())
+                {
+                    connection.Open();
+                    using (var transaction = connection.BeginTransaction())
+                    {
+                        var bulkConfig = new BulkConfig() { SqliteConnection = connection, SqliteTransaction = transaction };
+                        CdmContext.BulkInsert(concepts, bulkConfig);
+                        transaction.Commit();
+                    }
+                }
+            }
+            else
+            {
+                CdmContext.BulkInsert(concepts);
+                using (var transaction = CdmContext.Database.BeginTransaction())
+                {
+                    CdmContext.BulkInsert(concepts);
+                    transaction.Commit();
+                }
+                
+            }
         }
         
     }
@@ -104,36 +83,7 @@ namespace omopcdmlib.Utils
 
     }
 
-    public class OmopWriteDb<T>
-    {
-        public void omopwrite(List<T> towrite, OmopCdmContext CdmContext)
-        {
-            if (CdmContext.Database.IsSqlite())
-            {
-                using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())
-                {
-                    connection.Open();
-                    using (var transaction = connection.BeginTransaction())
-                    {
-                        var bulkConfig = new BulkConfig() { SqliteConnection = connection, SqliteTransaction = transaction };
-                        CdmContext.BulkInsert(towrite, bulkConfig);
-                        transaction.Commit();
-                    }
-                }
-            }
-            else
-            {
-                CdmContext.BulkInsert(towrite);
-                using (var transaction = CdmContext.Database.BeginTransaction())
-                {
-                    CdmContext.BulkInsert(towrite);
-                    transaction.Commit();
-                }
-                
-            }
-        }
-    }
-
+    
 }
 
 
