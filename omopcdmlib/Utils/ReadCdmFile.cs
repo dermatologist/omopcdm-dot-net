@@ -6,6 +6,8 @@ using System.Reflection;
 
 namespace omopcdmlib.Utils
 {
+
+    //https://stackoverflow.com/questions/23225973/parsing-tab-delimited-text-files
     public class ReadCdmFile<T>
     {
 
@@ -27,46 +29,22 @@ namespace omopcdmlib.Utils
                 datatable.Rows.Add(datarow);
             }
 
-            return ConvertDataTable<T>(datatable);
-            // foreach (DataRow row in datatable.Rows)
-            // {
-            //     Console.WriteLine("----Row No: " + datatable.Rows.IndexOf(row) + "----");
-            //
-            //     foreach (DataColumn column in datatable.Columns)
-            //     {
-            //         //check what columns you need
-            //         if (column.ColumnName == "concept_name" || 
-            //             column.ColumnName == "concept_id" ||
-            //             column.ColumnName == "domain_id") 
-            //         {
-            //             Console.Write(column.ColumnName);
-            //             Console.Write(" ");
-            //             Console.WriteLine(row[column]);
-            //         }
-            //     }
-            //
-            //     if (datatable.Rows.IndexOf(row) > 10)
-            //     {
-            //         break;
-            //     }
-            // }
-            // Console.ReadLine();
-            // return datatable;
+            return ConvertDataTable(datatable);
         }
-        
-        private static List<T> ConvertDataTable<T>(DataTable dt)  
+        // https://www.c-sharpcorner.com/UploadFile/ee01e6/different-way-to-convert-datatable-to-list/        
+        private static List<T> ConvertDataTable(DataTable dt)  
         {  
             List<T> data = new List<T>();
             int id = 0;
             foreach (DataRow row in dt.Rows)  
             {  
-                T item = GetItem<T>(row, id);  
+                T item = GetItem(row, id);  
                 data.Add(item);
                 id++;
             }  
             return data;  
         }  
-        private static T GetItem<T>(DataRow dr, int id)  
+        private static T GetItem(DataRow dr, int id)  
         {  
             Type temp = typeof(T);  
             T obj = Activator.CreateInstance<T>();
