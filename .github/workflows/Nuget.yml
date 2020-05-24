@@ -1,4 +1,4 @@
-name: publish to Github nuget packages
+name: publish to NuGet
 on:
   push:
     branches:
