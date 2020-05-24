@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 
@@ -52,7 +53,7 @@ namespace omopcdmlib.Utils
             {  
                 foreach (PropertyInfo pro in temp.GetProperties())  
                 {  
-                    if (pro.Name == column.ColumnName)  
+                    if (pro.Name == TitleCaseConvert(column.ColumnName))  
                         pro.SetValue(obj, dr[column.ColumnName], null);  
                     else if (pro.Name == "Id")
                         pro.SetValue(obj, id, null);
@@ -63,5 +64,9 @@ namespace omopcdmlib.Utils
             }  
             return obj;  
         } 
+        private static string TitleCaseConvert(string title)
+        { 
+            return new CultureInfo("en").TextInfo.ToTitleCase(title.ToLower().Replace("_", " ")).Replace(" ", "");
+        }
     }
 }
