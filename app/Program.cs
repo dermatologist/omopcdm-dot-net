@@ -36,7 +36,7 @@ namespace app
                                     ValidStartDate = "2012-12-12",
                                     ValidEndDate = "2012-12-12",
                                     InvalidReason = "None",
-                                    DomainId = "ASDF" });
+                                    DomainId = "SomeDomain" });
                 db.SaveChanges();
 
                 // Read
