@@ -5,7 +5,6 @@
 
 # DB
 app/app.db
-.vscode
 *.db
 cdm.*
 cdm-create.*

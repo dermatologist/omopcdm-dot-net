@@ -1,0 +1,11 @@
+{
+    "licenser.author": "Bell Eapen",
+    "licenser.projectName": "omopcdm-dot-net",
+    "licenser.license": "MIT",
+    "licenser.useSingleLineStyle": false,
+    "cSpell.words": [
+        "Omop",
+        "SNOMED",
+        "omopcdmlib"
+    ]
+}
