@@ -6,12 +6,12 @@ using omopcdmlib.Models;
 
 namespace omopcdmlib.Utils
 {
-    public class WriteCdmDb<T> where T : class 
+    public class WriteCdmDb<T> where T : class
     {
         // https://github.com/borisdj/EFCore.BulkExtensions
         public void Write(List<T> entity, OmopCdmContext CdmContext)
         {
-            
+
             if (CdmContext.Database.IsSqlite())
             {
                 using (var connection = (SqliteConnection)CdmContext.Database.GetDbConnection())
@@ -19,7 +19,7 @@ namespace omopcdmlib.Utils
                     connection.Open();
                     using (var transaction = connection.BeginTransaction())
                     {
-                        var bulkConfig = new BulkConfig() { SqliteConnection = connection, SqliteTransaction = transaction };
+                        var bulkConfig = new BulkConfig();
                         CdmContext.BulkInsert(entity, bulkConfig);
                         transaction.Commit();
                     }
@@ -33,7 +33,7 @@ namespace omopcdmlib.Utils
                     CdmContext.BulkInsert(entity);
                     transaction.Commit();
                 }
-                
+
             }
 
         }
