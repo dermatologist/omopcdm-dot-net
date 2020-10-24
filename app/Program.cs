@@ -20,16 +20,16 @@ namespace app
             using (var db = new AppContext(optionsBuilder.Options))
             {
                 // Create vocab
-                Console.WriteLine("Writing vocabulary");
-                var vocab = new CreateVocab("/scratch/beapen/cdm5-umls/", db);
-                vocab.Create(20);
+                // Console.WriteLine("Writing vocabulary");
+                // var vocab = new CreateVocab("/path/to/vocab/files/", db);
+                // vocab.Create(20);
 
                 // Create
                 Console.WriteLine("Inserting a new Concept");
-                db.Add(new Concept { 
+                db.Add(new Concept {
                                     Id=22,
                                     ConceptId = 4523432,
-                                    ConceptName = "My Concept", 
+                                    ConceptName = "My Concept",
                                     VocabularyId = "SNOMED",
                                     ConceptClassId = "MyClass",
                                     ConceptCode = "MyCode",
