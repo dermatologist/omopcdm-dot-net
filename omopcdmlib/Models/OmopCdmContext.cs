@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+ * Copyright (c) 2020 Bell Eapen
+ *
+ * This software is released under the MIT License.
+ * https://opensource.org/licenses/MIT
+ */
+
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
