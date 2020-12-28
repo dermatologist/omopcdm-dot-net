@@ -1,5 +1,7 @@
 # omopcdm-dot-net
 
+![Nuget](https://img.shields.io/nuget/dt/omopcdmlib)
+
 ## Description
 
 The OHSDI OMOP Common Data Model allows for the systematic analysis of healthcare observational databases. This is a .Net Core library to use the CDM v6 compliant databases.
@@ -60,4 +62,4 @@ PM> Install-Package omopcdmlib
 
 ## Contributors
 
-* [Bell Eapen](https://nuchange.ca)
+* [Bell Eapen](https://nuchange.ca) | [![Twitter Follow](https://img.shields.io/twitter/follow/beapen?style=social)](https://twitter.com/beapen)
